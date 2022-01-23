@@ -1,16 +1,28 @@
 
 
 
-const AddTodoAction =(todoItem)=>dispatch=>{
+const AddTodoAction = (todoItem) => dispatch=>{
    dispatch({
-       type:"AddTodo",
+       type:"ADD_TODO",
        payload:todoItem
    })
 }
 
+const DeleteTodoItemAction = (deleteItem) => dispatch=>{
+    dispatch({
+        type:"DELETE_TODO_ITEM",
+        payload:deleteItem
+    })
+ }
+ 
 
 
-export {AddTodoAction}
+
+
+
+
+
+export {AddTodoAction, DeleteTodoItemAction}
 
 
 
