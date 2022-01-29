@@ -1,21 +1,27 @@
-import React from "react";
-import {DeleteTodoItemAction} from "./../redux/todoApp/action"
+import React,{useState} from "react";
+import {DeleteTodoItemAction, EditTodoItemAction} from "./../redux/todoApp/action"
 import { useDispatch } from "react-redux";
 
-const TodoList = ({value,id,disableStatus,click}:{value:string, id:number,disableStatus:boolean,click:any}) => {
-  
+const TodoList = ({value,id}:{value:string, id:number}) => {
+   
     const dispatch = useDispatch();
+    const [editStatus , setEditStatus] = useState(true);
+    const [todoItem, setTodoItem] = useState(value);
     const handleDelete = (id:number) => {
         dispatch(DeleteTodoItemAction(id))
     } 
 
+    const handleEdit=(id:number)=>{
+      setEditStatus(!editStatus);
+      dispatch(EditTodoItemAction(id,todoItem));
+    }
+
+
   return (
     <>
       <div>
-        { 
-          disableStatus ? <input type="text" value= {value} /> :  <input type="text" value= {value} disabled />
-        }    
-        <button onClick={click}>edit</button>
+        <input type="text" value= {todoItem} onChange={(e)=>setTodoItem(e.target.value)} disabled={editStatus}/> 
+        <button onClick={()=>handleEdit(id)}>edit</button>
         <button onClick={()=>handleDelete(id)}>delete</button>
       </div>
     </>

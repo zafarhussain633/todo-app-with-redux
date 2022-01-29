@@ -14,15 +14,17 @@ const DeleteTodoItemAction = (deleteItem) => dispatch=>{
         payload:deleteItem
     })
  }
- 
+
+ const EditTodoItemAction = (id,editItem) => dispatch=>{
+    dispatch({
+        type:"EDIT_TODO_ITEM",
+        payload:{id,editItem}
+    })
+ }
 
 
 
-
-
-
-
-export {AddTodoAction, DeleteTodoItemAction}
+export {AddTodoAction, DeleteTodoItemAction,EditTodoItemAction}
 
 
 
