@@ -10,16 +10,17 @@ const  TodoListReducer = (state=initialState, action)=>{
         return [...state , action.payload]
 
         case "DELETE_TODO_ITEM":
-          return state.filter(res=> (res!==state[action.payload]))
-           
-         case "EDIT_TODO_ITEM":
-          state[action.payload.id] = action.payload.item
+           state.splice(action.payload,1)
            return [...state]
  
+        case "RESET_TODO_ITEM":
+            return []
+            
         default:
             return state
     }
 
+   
 }
 
 
