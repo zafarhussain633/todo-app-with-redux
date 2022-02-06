@@ -1,23 +1,25 @@
-
-import {DeleteTodoItemAction} from "../redux/todoApp/action"
+import { DeleteTodoItemAction } from "../redux/todoApp/action";
 import { useDispatch } from "react-redux";
 
+const TodoList = ({ value, id }) => {
+  const dispatch = useDispatch();
 
-const TodoList = ({value,id}) => {
-   
-    const dispatch = useDispatch();
-   
-    const handleDelete = () => {
-        dispatch(DeleteTodoItemAction(id))
-    } 
+  const handleDelete = () => {
+    dispatch(DeleteTodoItemAction(id));
+  };
 
   return (
-    <>
-      <div>
-        <i>{value}</i> 
-        <button onClick={handleDelete}>remove</button>
-      </div>
-    </>
+    <div className="todo-list">
+        <div>
+          <h2>{value}</h2>
+        </div>
+
+        <div>
+          <button className="deleteButton" onClick={handleDelete}>
+            remove
+          </button>
+        </div>
+    </div>
   );
 };
 

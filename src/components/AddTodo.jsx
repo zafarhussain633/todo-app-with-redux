@@ -17,7 +17,7 @@ const AddTodo = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <input type="text" value={todo} placeholder="add what to todo" onChange={handleChange} />
+      <input  value={todo}  onChange={handleChange}  id="username" type="text"  placeholder="add what to todo" />
         <button type="submit">Add</button>
     </form>
   );

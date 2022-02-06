@@ -5,12 +5,10 @@
   border: 2px solid grey;
   text-align: center;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 10%;                
   -webkit-box-shadow: -2px -1px 15px 7px grey;
   -moz-box-shadow: -3px -2px 30px 14px grey;
 }
-
-
 
 .main {
   min-height: 100vh;

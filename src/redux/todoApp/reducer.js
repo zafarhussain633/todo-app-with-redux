@@ -1,6 +1,3 @@
-
-
-
 const initialState = []
 
 const  TodoListReducer = (state=initialState, action)=>{
@@ -15,7 +12,7 @@ const  TodoListReducer = (state=initialState, action)=>{
  
         case "RESET_TODO_ITEM":
             return []
-            
+
         default:
             return state
     }
