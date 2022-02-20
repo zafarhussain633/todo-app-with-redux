@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <h1>React todo app</h1>
+      <h1>Redux Todo App</h1>
       <AddTodo />
       {TodoListData.length>0 && TodoListData.map((res,i)=>(<TodoList key={i} value={res} id={i}/>))} 
       {TodoListData.length>0 && <button py-4 fle onClick={handleReset}>Reset</button>}
